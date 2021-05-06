@@ -1,4 +1,7 @@
-require "dotenv/load"
+if ENV["RACK_ENV"] == "development"
+  require "dotenv/load"
+end
+
 require "rubygems"
 require "sinatra"
 require "json"
