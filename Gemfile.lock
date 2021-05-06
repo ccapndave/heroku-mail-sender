@@ -1,0 +1,40 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    dotenv (2.7.6)
+    json (2.5.1)
+    mail (2.7.1)
+      mini_mime (>= 0.1.1)
+    mini_mime (1.1.0)
+    mustermann (1.1.1)
+      ruby2_keywords (~> 0.0.1)
+    pony (1.13.1)
+      mail (>= 2.0)
+    rack (2.2.3)
+    rack-protection (2.1.0)
+      rack
+    recaptcha (5.7.0)
+      json
+    ruby2_keywords (0.0.4)
+    sinatra (2.1.0)
+      mustermann (~> 1.0)
+      rack (~> 2.2)
+      rack-protection (= 2.1.0)
+      tilt (~> 2.0)
+    tilt (2.0.10)
+    webrick (1.7.0)
+
+PLATFORMS
+  x86_64-darwin-18
+
+DEPENDENCIES
+  dotenv
+  json
+  pony
+  rack
+  recaptcha
+  sinatra
+  webrick
+
+BUNDLED WITH
+   2.2.16
