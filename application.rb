@@ -17,14 +17,10 @@ set :protection, false
 # subject - the subject of the message
 # body - the message
 post "/send_email" do
-  encryption_key = Base64.urlsafe_decode64(ENV["ENCRYPTION_KEY"])
-  to = params[:to].decrypt(encryption_key)
-  site = params[:site].decrypt(encryption_key) 
-
   begin
     encryption_key = Base64.urlsafe_decode64(ENV["ENCRYPTION_KEY"])
-    to = params[:to].decrypt(encryption_key)
-    site = params[:site].decrypt(encryption_key)
+    to = Base64.urlsafe_decode64(params[:to]).decrypt(encryption_key)
+    site = Base64.urlsafe_decode64(params[:site]).decrypt(encryption_key)
   rescue 
     { :success => false, :reason => "decryption" }.to_json
   else
